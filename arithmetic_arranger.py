@@ -1,4 +1,5 @@
-import re, sys
+import re
+import sys
 
 supported_operators: str = "+-"
 max_number_of_problems: int = 5
@@ -119,8 +120,10 @@ def arrange(problems: list[str], with_answers=False) -> list[list[str]]:
         iteration += 1
 
     # Add the whole arrangement line by line.
-    for line in line_1, line_2, line_3, line_4:
+    for line in line_1, line_2, line_3:
         arrangement.append(line)
+    if with_answers:
+        arrangement.append(line_4)
 
     return arrangement
 
